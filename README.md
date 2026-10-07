@@ -1,2 +1,5 @@
 # TP_AySO
-Trabajo Practico 1 - Arquitectura y Sistemas Operativos
+
+Alumno: Lisandro Baez
+División: 111
+Turno: Mañana
