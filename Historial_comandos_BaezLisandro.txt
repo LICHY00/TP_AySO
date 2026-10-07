@@ -69,3 +69,28 @@ history -a
 cp ../../.bash_history Historial_comandos_BaezLisandro.txt
 tail -n 80 Historial_comandos_BaezLisandro.txt
 history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' Historial_comandos_BaezLisandro.txt
+sed -i '/^agrant \/etc\/shadow$/d' Historial_comandos_BaezLisandro.txt
+grep -q $'\033' Historial_comandos_BaezLisandro.txt && echo 'Hay secuencias ANSI' || echo 'Historial limpio'
+git add Historial_comandos_BaezLisandro.txt
+git commit -m "ADD: Agregando historial de comandos"
+ls -l
+git --no-pager log --oneline --reverse
+find $HOME/universidad/alumnos -mindepth 1 -maxdepth 1 -type d | wc -l
+find $HOME/universidad/profesores -mindepth 1 -maxdepth 1 -type d | wc -l
+git status --short
+cp -a $HOME/repogit/TP_AySO $HOME/carpeta_compartida/TP_AySO
+git remote add origin git@github.com:LICHY00/TP_AySO.git
+ssh -o StrictHostKeyChecking=accept-new -T git@github.com
+git fetch origin
+git rebase --onto origin/main aef6f04 main
+git checkout --theirs README.md
+git add README.md
+GIT_EDITOR=true git rebase --continue
+git --no-pager log --oneline --reverse
+git push -u origin main
+cd ..
+git clone git@github.com:LICHY00/TP_AySO.git TP_AySO_verificacion
+cd TP_AySO
+history -a
