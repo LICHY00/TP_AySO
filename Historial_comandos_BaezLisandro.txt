@@ -94,3 +94,10 @@ cd ..
 git clone git@github.com:LICHY00/TP_AySO.git TP_AySO_verificacion
 cd TP_AySO
 history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' Historial_comandos_BaezLisandro.txt
+sed -i '/^agrant \/etc\/shadow$/d' Historial_comandos_BaezLisandro.txt
+git add Historial_comandos_BaezLisandro.txt
+git commit -m "docs: actualizar historial final"
+git push
+history -a && cp ../../.bash_history Historial_comandos_BaezLisandro.txt && sed -i 's/\x1b\[[0-9;]*[A-Za-z]//g' Historial_comandos_BaezLisandro.txt && sed -i '/^agrant \/etc\/shadow$/d' Historial_comandos_BaezLisandro.txt && git add Historial_comandos_BaezLisandro.txt && git commit -m "docs: documentar comandos finales" && git push
