@@ -1,0 +1,71 @@
+pwd
+whoami
+ssh-keygen
+cat $HOME/.ssh/*.pub
+cd
+mkdir repogit
+cd repogit
+pwd
+ls -l
+base64 -w 0 $HOME/.ssh/id_rsa.pub
+man grep
+sudo cat /etc/shadow > /dev/null
+history | tail -n 25
+grep VAGRANT /etc/shadow
+grep vagrant /etc/shadow
+grep -i Vagrant /etc/shadow
+git config --global user.email "lisandro.baez07@gmail.com"
+git config --global user.name "Lisandro Baez"
+git config --global --list
+mkdir TP_AySO
+cd TP_AySO
+git init -b main
+echo "# TP_AySO" > README.md
+git add README.md
+git commit -m "Initial commit"
+sudo grep -i vagrant /etc/shadow | awk -F: '{print $2}' > pass_usuario.txt
+whoami
+echo "Usuario=$(whoami)" >> pass_usuario.txt
+sed '1s/.*/[HASH]/' pass_usuario.txt
+git add .
+git commit -m "ADD: agregado 1er ejercicio sobre pass_usuario.txt"
+git status
+ls -la $HOME > permisos.txt
+echo 'Comando utilizado: ls -la $HOME > permisos.txt' >> permisos.txt
+tail -n 3 permisos.txt
+git add permisos.txt
+git commit -m "ADD: Añadiendo archivo permisos"
+grep -v '^root:' /etc/passwd | cut -d: -f1 | sort | head -n 10 > lista_ordenada
+cat lista_ordenada
+wc -l lista_ordenada
+git add lista_ordenada
+git commit -m "ADD: Listado de usuarios ordenada"
+cat << EOF >> README.md
+
+Alumno: Lisandro Baez
+División: 111
+Turno: Mañana
+EOF
+
+cat README.md
+git add README.md
+git commit -m "docs: agregar datos del alumno al README"
+mkdir -p $HOME/universidad/{alumnos/legajos{1..15},profesores/legajos{1..5}}
+find $HOME/universidad -type d | sort
+cat << 'EOF' > script_dir.sh
+#!/bin/bash
+mkdir -p $HOME/universidad/{alumnos/legajos{1..15},profesores/legajos{1..5}}
+EOF
+
+chmod +x script_dir.sh
+cat script_dir.sh
+bash -n script_dir.sh
+./script_dir.sh
+git add .
+git commit -m "ADD: Añadiendo script"
+history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+tail -n 80 Historial_comandos_BaezLisandro.txt
+history -a
