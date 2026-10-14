@@ -52,3 +52,11 @@ git add .
 git commit -m "ADD: Agregando historial de comandos"
 git push
 history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+git add .
+git commit -m "docs: Actualizando historial de comandos"
+git push
+cd repogit/TP_AySO
+sudo grep -i vagrant /etc/shadow | awk -F: '{print $2}' > pass_usuario.txt
+echo "Usuario=$(whoami)" >> pass_usuario.txt
+history -a
