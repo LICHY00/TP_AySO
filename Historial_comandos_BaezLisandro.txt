@@ -60,3 +60,11 @@ cd repogit/TP_AySO
 sudo grep -i vagrant /etc/shadow | awk -F: '{print $2}' > pass_usuario.txt
 echo "Usuario=$(whoami)" >> pass_usuario.txt
 history -a
+cp ../../.bash_history Historial_comandos_BaezLisandro.txt
+git add .
+git commit -m "ADD: Corrección punto 2"
+git push
+cd repogit/TP_AySO
+chmod +x script_dir.sh
+ls -l script_dir.sh
+history -a
